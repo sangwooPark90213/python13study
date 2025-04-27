@@ -13,10 +13,5 @@ RUN apt-get update && apt-get install -y git
 
 # 현재 디렉토리의 모든 내용 복사
 COPY . .
-
-# 컨테이너 시작 시 실행할 명령어 (애플리케이션 실행)
-# 예시: Flask 애플리케이션 실행
-# CMD ["python", "app.py"]
-
 # 또는 다른 스크립트 실행
-# CMD ["python", "main.py"]
+CMD ["bash", "gitset.sh"]

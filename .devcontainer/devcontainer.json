@@ -26,6 +26,6 @@
   "mounts": [
     "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
   ],
-  // "postCreateCommand": "pip install -r /app/requirements.txt",
+  "postCreateCommand": "bash gitset.sh",
   "remoteUser": "root"
 }
