@@ -17,7 +17,8 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylint",
-        "ms-python.black-formatter"
+        "ms-python.black-formatter",
+        "donjayamanne.githistory"
       ]
     }
   },
@@ -25,6 +26,6 @@
   "mounts": [
     "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
   ],
-  "postCreateCommand": "pip install -r /app/requirements.txt",
-  "remoteUser": "vscode"
+  // "postCreateCommand": "pip install -r /app/requirements.txt",
+  "remoteUser": "root"
 }

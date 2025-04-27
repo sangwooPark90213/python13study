@@ -5,18 +5,14 @@ FROM python:3.13.3-slim-bookworm
 WORKDIR /app
 
 # 필요한 시스템 패키지 설치 (선택 사항)
-# 예: 빌드 도구, 기타 라이브러리 등
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#     build-essential \
-#     libpq-dev \
-#     && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git
 
 # requirements.txt 파일이 있다면 패키지 설치
 # COPY requirements.txt .
 # RUN pip install --no-cache-dir -r requirements.txt
 
 # 현재 디렉토리의 모든 내용 복사
-# COPY . .
+COPY . .
 
 # 컨테이너 시작 시 실행할 명령어 (애플리케이션 실행)
 # 예시: Flask 애플리케이션 실행
