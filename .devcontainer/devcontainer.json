@@ -1,0 +1,30 @@
+{
+  "name": "Python 3 Dev Container",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "args": {
+      "PYTHON_VERSION": "3.13"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylint",
+        "ms-python.black-formatter"
+      ]
+    }
+  },
+  "forwardPorts": [3010],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "pip install -r /app/requirements.txt",
+  "remoteUser": "vscode"
+}
